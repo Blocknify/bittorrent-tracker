@@ -1,4 +1,4 @@
-var Server = require('bittorrent-tracker').Server
+var Server = require('./server.js')
 
 var server = new Server({
   udp: true, // enable udp server? [default=true]
@@ -50,7 +50,7 @@ server.on('listening', function () {
 })
 
 // start tracker server listening! Use 0 to listen on a random free port.
-server.listen(1900, "localhost")
+server.listen(1900, "0.0.0.0")
 
 // listen for individual tracker messages from peers:
 
